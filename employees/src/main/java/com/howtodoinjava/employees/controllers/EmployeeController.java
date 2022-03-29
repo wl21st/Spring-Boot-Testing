@@ -1,7 +1,8 @@
 package com.howtodoinjava.employees.controllers;
 
+import com.howtodoinjava.employees.model.Employee;
+import com.howtodoinjava.employees.services.EmployeeService;
 import javax.validation.ValidationException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.howtodoinjava.employees.model.Employee;
-import com.howtodoinjava.employees.services.EmployeeService;
-
 @RestController
 public class EmployeeController {
 
@@ -24,7 +22,7 @@ public class EmployeeController {
   EmployeeService employeeService;
 
   @PostMapping("/employee")
-  Employee create(@RequestBody Employee employee)  {
+  Employee create(@RequestBody Employee employee) {
     return employeeService.save(employee);
   }
 
@@ -40,7 +38,7 @@ public class EmployeeController {
 
   @DeleteMapping("/employee/{id}")
   void delete(@PathVariable Integer id) {
-	  employeeService.deleteById(id);
+    employeeService.deleteById(id);
   }
 
   @GetMapping("/wrong")

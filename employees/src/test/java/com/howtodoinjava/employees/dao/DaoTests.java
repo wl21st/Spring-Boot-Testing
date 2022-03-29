@@ -1,6 +1,7 @@
 package com.howtodoinjava.employees.dao;
 
 
+import com.howtodoinjava.employees.model.Employee;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,18 +10,16 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.howtodoinjava.employees.model.Employee;
-
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class DaoTests {
+class DaoTests {
 
   @Autowired
   EmployeeRepository employeeRepository;
 
   @Test
-  public void testCreateReadDelete() {
+  void testCreateReadDelete() {
     Employee employee = new Employee("Lokesh", "Gupta");
 
     employeeRepository.save(employee);

@@ -3,29 +3,29 @@ package com.howtodoinjava.employees.handlers;
 import java.util.List;
 
 public class ErrorResponse {
-	public ErrorResponse(String message, List<String> details) {
-		super();
-		this.message = message;
-		this.details = details;
-	}
 
-	private String message;
-	private List<String> details;
+  private String message;
+  private List<String> details;
+  public ErrorResponse(String message, List<String> details) {
+    super();
+    this.message = message;
+    this.details = details;
+  }
 
-	public String getMessage() {
-		return message;
-	}
+  public String getMessage() {
+    return message;
+  }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+  public void setMessage(String message) {
+    this.message = message;
+  }
 
-	public List<String> getDetails() {
-		return details;
-	}
+  public List<String> getDetails() {
+    return details;
+  }
 
-	public void setDetails(List<String> details) {
-		this.details = details;
-	}
+  public void setDetails(List<String> details) {
+    this.details = details;
+  }
 
 }
